@@ -1,28 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-nav{
+
+nav {
   width: 100%;
-  position: sticky !important;
+  position: sticky;
   left: 0;
   top: 0;
-  box-shadow: 0px 5px 8px rgba(0,0,0,.5);
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
-.navbar-brand{
+
+.navbar-brand {
   font-weight: 600;
 }
-.nav-link{
+
+.nav-link {
   color: white !important;
 }
-.nav-link:hover{
+
+.nav-link:hover {
   border-bottom: 1px solid white;
 }
-#home{
+
+/* Home Section */
+#home {
   width: 100%;
   height: 100vh;
   background: url(backgr.webp);
@@ -32,59 +39,61 @@ nav{
   align-items: center;
   color: white;
   flex-direction: column;
-  
 }
+
 #home p {
   position: absolute;
   top: 50%;
   font-size: 80px;
   opacity: 0;
-  animation: text 9s ease-in-out infinite; /* Total duration is now 9s */
+  animation: text 9s ease-in-out infinite;
 }
 
 #home p:nth-child(1) {
-  animation-delay: 0s; /* Starts immediately */
+  animation-delay: 0s;
 }
 
 #home p:nth-child(2) {
-  animation-delay: 3s; /* Starts after 3s */
+  animation-delay: 3s;
 }
 
 #home p:nth-child(3) {
-  animation-delay: 6s; /* Starts after 6s */
+  animation-delay: 6s;
 }
 
 @keyframes text {
   0%, 20% {
-    opacity: 0; /* Invisible at the start */
+    opacity: 0;
   }
   20%, 50% {
-    opacity: 1; /* Fully visible */
+    opacity: 1;
   }
   50%, 100% {
-    opacity: 0; /* Invisible at the end */
+    opacity: 0;
   }
 }
 
-#home span{
+#home span {
   color: yellow;
 }
-@media screen and(max-width:576px){
-  #home p{
+
+/* Responsive Font Size */
+@media screen and (max-width: 576px) {
+  #home p {
     font-size: 50px;
-    align-items: center;
     top: 50%;
   }
 }
-/*About*/
-#about{
+
+/* About Section */
+#about {
   display: flex;
   justify-content: center;
   align-items: center;
   background: #ff75a0;
   padding: 50px;
-  
 }
+
 .circle {
   width: 400px;
   height: 400px;
@@ -96,21 +105,22 @@ nav{
   margin-bottom: 3%;
   user-select: none;
   transition: 1s;
-  overflow: hidden; /* Ensures the image doesn't overflow */
+  overflow: hidden;
 }
 
 .circle img {
   position: absolute;
-  height: 110%; /* Increased height to 110% */
-  width: auto; /* Maintain aspect ratio */
-  top: -5%; /* Adjust top position to keep the image centered */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center the image */
+  height: 110%;
+  width: auto;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
   filter: drop-shadow(0px 30px 150px rgba(0, 0, 0, 0.4));
   user-select: none;
   transition: 1s;
 }
-.content{
+
+.content {
   opacity: 0;
   padding: 20px;
 }
@@ -122,25 +132,26 @@ nav{
 }
 
 .circle:hover img {
-  left: 0; /* Move image to the left */
-  transform: translateX(0); /* Remove horizontal centering */
-  transition: 1s;
+  left: 0;
+  transform: translateX(0);
 }
-.circle:hover .content{
+
+.circle:hover .content {
   position: absolute;
   top: 15%;
   right: 0;
   color: white;
   width: 50%;
   opacity: 1;
- 
 }
+
+/* Responsive Hover Effect for Mobile */
 @media screen and (max-width: 576px) {
-  .circle:hover{
+  .circle:hover {
     width: 400px;
-    height: 600px; /* Keep the height */
+    height: 600px;
     background: #e93b81;
-    border-radius: 10px; /* Adjusted for hover effect */
+    border-radius: 10px;
   }
 
   .circle:hover img {
@@ -149,56 +160,89 @@ nav{
 
   .circle:hover .content {
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Start from the center */
-    transform: translate(-50%, -50%); /* Center the content */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    width: 50%; /* Adjust width of content */
-    opacity: 1; /* Ensure it is visible on hover */
+    width: 80%; /* Adjust for mobile */
+    opacity: 1;
     transition: 1s;
   }
 }
 
-#skills{
+/* Skills Section */
+#skills {
   padding: 100px;
   background: #fefefe;
-  
 }
-#skills label{
+
+#skills label {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 20px;
 }
-#projects{
+
+/* Projects Section */
+#projects {
   padding: 100px;
 }
 
-#projects h1{
+#projects h1 {
   margin-bottom: 30px;
   margin-top: 30px;
 }
-#projects .row{
+
+#projects .row {
   padding: 20px;
 }
+
 @media screen and (max-width: 576px) {
   #projects .card {
-      padding: 20px;
-      margin-bottom: 15px; /* Add space below each card */
+    padding: 20px;
+    margin-bottom: 15px;
+    width: 100%; /* Full width on small screens */
   }
 }
 
-#contact{
+/* Contact Section */
+#contact {
   background-color: antiquewhite;
   padding: 15px;
 }
-#contact .container h1{
 
+#contact .container h1 {
   padding: 15px 0px;
 }
-#contact .container iframe{
-  transition: .2s;
+
+#contact .container iframe {
+  transition: 0.2s;
+  width: 100%; /* Make iframe responsive */
+  height: 300px; /* Fixed height for consistency */
 }
-#contact .container:hover iframe{
+
+#contact .container:hover iframe {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-  transition: .2s;
+  transition: 0.2s;
+}
+
+/* Additional Media Queries */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 10px; /* Adjust nav padding */
+  }
+
+  #skills, #projects {
+    padding: 50px; /* Reduced padding for smaller devices */
+  }
+
+  .circle {
+    width: 300px;
+    height: 300px; /* Smaller circle on medium screens */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #home p {
+    font-size: 60px; /* Slightly smaller font on larger screens */
+  }
 }
